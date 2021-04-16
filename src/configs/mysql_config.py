@@ -16,6 +16,6 @@ class MysqlConfig(object):
             'host': 'localhost',
             'port': 3306,
             'username': 'root',
-            'password': 'rh!z!cub3'
+            'password': 'root'
         }
     }
