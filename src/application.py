@@ -4,7 +4,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 cors = CORS(app, resources={"/*": {"origins": "*", "methods": ["GET", "POST"]},
-                            "/*/*": {"origins": "*", "methods": ["GET", "POST"]}})
+                            "/*/*": {"origins": "*", "methods": ["GET", "POST"]}}, allow_headers='Content-Type')
 
 
 @app.route('/')
