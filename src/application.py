@@ -3,7 +3,8 @@ from controllers.product_controller import ProductController
 from flask_cors import CORS
 
 app = Flask(__name__)
-cors = CORS(app, resources={r"/*": {"origins": "*","methods":["GET","POST"]}})
+cors = CORS(app, resources={"/*": {"origins": "*", "methods": ["GET", "POST"]},
+                            "/*/*": {"origins": "*", "methods": ["GET", "POST"]}})
 
 
 @app.route('/')
@@ -19,6 +20,7 @@ def product():
         ProductController().add_product(product=product_details)
         return {"status": 200}
     else:
+        result = []
         category_name = request.args.get("category")
         id = request.args.get("id")
         if category_name:
