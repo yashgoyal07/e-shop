@@ -2,4 +2,4 @@ import os
 
 
 def get_environment():
-    return os.environ.get('my_env', 'prod')
+    return os.environ.get('my_env', 'local')
