@@ -1,10 +1,15 @@
 from flask import Flask, request, jsonify
-from flask_cors import cross_origin
+from flask_cors import CORS
 from controllers.product_controller import ProductController
 
 
 app = Flask(__name__)
-
+CORS(app)
+cors = CORS(app, resources={
+    r"/*": {
+        "origins": "*"
+    }
+})
 
 @app.route('/')
 def index():
@@ -12,7 +17,6 @@ def index():
 
 
 @app.route('/product', methods=['POST', 'GET'])
-@cross_origin()
 def product():
     if request.method == 'POST':
         product_details = request.get_json()
@@ -33,4 +37,4 @@ def product():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
