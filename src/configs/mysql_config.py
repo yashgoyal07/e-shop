@@ -15,7 +15,7 @@ class MysqlConfig(object):
         'prod': {
             'host': 'localhost',
             'port': 3306,
-            'username': 'root',
-            'password': 'root'
+            'username': 'yashgoyal01',
+            'password': 'Yashgoyal@07'
         }
     }
